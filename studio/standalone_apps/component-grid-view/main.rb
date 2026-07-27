@@ -1,0 +1,41 @@
+# frozen_string_literal: true
+
+require "ruflet"
+
+Ruflet.run do |page|
+  page.padding = 0
+  page.title = "GridView"
+  page.theme_mode = "system"
+  page.bgcolor = "#ffffff"
+  page.add(
+    container(
+      expand: true,
+      padding: 16,
+      content: grid_view(
+        expand: true,
+        runs_count: 3,
+        max_extent: 120,
+        spacing: 8,
+        run_spacing: 8,
+        child_aspect_ratio: 1.15,
+        children: (1..12).map do |index|
+          container(
+            padding: 10,
+            bgcolor: index.even? ? "#172033" : "#1f2937",
+            border_radius: 8,
+            alignment: "center",
+            content: column(
+              tight: true,
+              spacing: 6,
+              horizontal_alignment: "center",
+              children: [
+                icon(icon: "widgets", color: "#9dccff"),
+                text(value: "Item #{index}", style: { size: 13, color: "#F8FAFC" })
+              ]
+            )
+          )
+        end
+      )
+    )
+  )
+end

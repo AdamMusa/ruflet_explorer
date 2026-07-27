@@ -1,0 +1,53 @@
+app:
+  backend_url: ""
+
+# Ruflet Explorer must be able to render every supported extension used by a
+# connected Ruflet application.
+extensions:
+  - audio
+  - audio_recorder
+  - camera
+  - charts
+  - code_editor
+  - color_pickers
+  - datatable2
+  - flashlight
+  - geolocator
+  - lottie
+  - map
+  - permission_handler
+  - qrcode_scanner
+  - rive
+  - secure_storage
+  - video
+  - webview
+
+assets:
+  dir: assets
+  splash_screen: assets/splash.png
+  icon_launcher: assets/icon.png
+
+build:
+  splash_color: "#FFFFFF"
+  splash_dark_color: "#0B0B0B"
+  icon_background: "#FFFFFF"
+  theme_color: "#6750A4"
+
+# Android draws its own splash from API 31 and its own adaptive icon from API 26,
+# so both need explicit configuration or the OS falls back to its defaults.
+android:
+  splash_color: "#FFFFFF"
+  splash_dark_color: "#0B0B0B"
+  splash_fullscreen: true
+  splash_android_12_icon_background_color: "#FFFFFF"
+  splash_android_12_icon_background_color_dark: "#0B0B0B"
+  adaptive_icon_background: "#FFFFFF"
+  adaptive_icon_foreground: assets/icon.png
+  min_sdk: 21
+
+ios:
+  splash_screen: assets/splash.png
+  splash_color: "#FFFFFF"
+  splash_dark_color: "#0B0B0B"
+  icon_launcher: assets/icon.png
+  remove_alpha: true

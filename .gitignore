@@ -1,0 +1,29 @@
+# Ruflet managed native workspace and build artifacts
+/build/
+*.apk
+*.aab
+*.ipa
+*.app.zip
+*.dSYM.zip
+
+# Local release credentials
+/credentials/
+.env
+.env.*
+!.env.example
+*.p8
+*.jks
+*.keystore
+
+# Fastlane (lanes + local output)
+/fastlane/
+
+# Release asset generator
+/release_assets/generator/node_modules/
+/release_assets/generator/.next/
+/release_assets/generator/out/
+
+# Local tooling
+/.ruby-lsp/
+.DS_Store
+*.log

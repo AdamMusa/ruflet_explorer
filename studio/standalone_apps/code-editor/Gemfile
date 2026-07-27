@@ -1,0 +1,6 @@
+source "https://rubygems.org"
+
+require "ruflet/version"
+
+gem "ruflet_core", ">= #{Ruflet::VERSION}"
+gem "ruflet_server", ">= #{Ruflet::VERSION}"
