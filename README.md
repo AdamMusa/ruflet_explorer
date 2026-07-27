@@ -4,12 +4,14 @@
 
 # Ruflet Explorer
 
-### The Expo Go of Ruby.
+### Your Ruby app, on a real device, in seconds.
 
-**Write a Ruby app. Run `ruflet run`. Scan the QR code. It's on your phone.**
+**Edit `main.rb` → `ruflet run` → scan → it's live in your hand.**
 
-No Xcode, no Android Studio, no rebuild, no redeploy — the same loop React Native
-developers get from Expo Go, for Ruby.
+Ruflet Explorer is the preview client for Ruflet apps. Install it once and every
+Ruby app you write runs on the device immediately — nothing to compile, nothing
+to sign, nothing to install again. If you've used Expo Go for React Native, this
+is that loop, for Ruby.
 
 [![Platform](https://img.shields.io/badge/platform-iOS%20%7C%20Android-6750A4)](#-build)
 [![Pure Ruby](https://img.shields.io/badge/100%25-pure%20Ruby-CC342D)](#-project-layout)
@@ -105,50 +107,6 @@ ruflet build aab --self
 ```bash
 ruflet build ios --self
 ```
-
----
-
-## 🎨 Icon and splash
-
-[`ruflet.yaml`](ruflet.yaml) is the single source of truth — the build pipeline copies the
-assets and generates the native resources for every platform.
-
-```yaml
-assets:
-  dir: assets
-  splash_screen: assets/splash.png
-  icon_launcher: assets/icon.png
-
-build:
-  splash_color: "#FFFFFF"
-  splash_dark_color: "#0B0B0B"
-  icon_background: "#FFFFFF"
-  theme_color: "#6750A4"
-```
-
-Each platform has its own section using the same key names, overriding the shared values:
-
-```yaml
-android:
-  splash_color: "#FFFFFF"
-  splash_dark_color: "#0B0B0B"
-  splash_fullscreen: true
-  splash_android_12_icon_background_color: "#FFFFFF"
-  splash_android_12_icon_background_color_dark: "#0B0B0B"
-  adaptive_icon_background: "#FFFFFF"
-  adaptive_icon_foreground: assets/icon.png
-  min_sdk: 21
-
-ios:
-  splash_screen: assets/splash.png
-  splash_color: "#FFFFFF"
-  splash_dark_color: "#0B0B0B"
-  icon_launcher: assets/icon.png
-  remove_alpha: true
-```
-
-`macos:` and `windows:` take `icon_launcher` (Windows also `icon_size`), and `web:` takes
-`splash_screen`, `icon_launcher`, `icon_background`, and `theme_color`.
 
 ---
 
