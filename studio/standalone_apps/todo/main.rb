@@ -14,7 +14,10 @@ Ruflet.run do |page|
   draft = ""
   list = column(spacing: 4)
 
-  refresh = lambda do
+  # `publish` is false for the initial fill, which runs before page.add: the
+  # list is not mounted yet, so patching here describes a page the client
+  # cannot resolve.
+  refresh = lambda do |publish = true|
     list.children.replace(
       todos.each_with_index.map do |item, i|
         row(
@@ -33,7 +36,7 @@ Ruflet.run do |page|
         )
       end
     )
-    page.update
+    page.update if publish
   end
 
   field = text_field(
@@ -51,7 +54,7 @@ Ruflet.run do |page|
     refresh.call
   end
 
-  refresh.call
+  refresh.call(false)
   page.add(
     container(
       expand: true,

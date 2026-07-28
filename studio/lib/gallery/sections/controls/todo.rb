@@ -16,7 +16,10 @@ module Gallery
       )
       list = column(spacing: 6, children: [])
 
-      render_list = lambda do
+      # `publish` is false for the initial fill: the section is still being
+      # built, so `list` is not mounted on the page yet and pushing a patch
+      # here describes a tree the client cannot resolve.
+      render_list = lambda do |publish = true|
         new_controls = todos.each_with_index.map do |item, idx|
           checkbox_control = checkbox(
             label: item[:text],
@@ -49,7 +52,7 @@ module Gallery
         end
 
         list.children.replace(new_controls)
-        page.update
+        page.update if publish
       end
 
       add_todo = lambda do
@@ -61,7 +64,7 @@ module Gallery
         render_list.call
       end
 
-      render_list.call
+      render_list.call(false)
 
       column(
         spacing: 8,
