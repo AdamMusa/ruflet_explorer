@@ -20,8 +20,8 @@ key.properties
 /fastlane/
 
 # Release asset generator
-/release_assets/generator/*
-release_assets/generator
+/release_assets/generator/
+
 # Local tooling
 /.ruby-lsp/
 .DS_Store

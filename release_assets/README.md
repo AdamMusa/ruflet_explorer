@@ -6,6 +6,7 @@ This folder contains the production App Store and Google Play marketing artwork 
 
 - `exports/apple/iphone-6.9/`: iPhone screenshots at 1320 × 2868 (6.9")
 - `exports/apple/iphone-6.5/`: iPhone screenshots at 1242 × 2688 (6.5")
+- `exports/apple/ipad-12.9/`: iPad screenshots at 2048 × 2732 (12.9")
 - `exports/google-play/phone/`: 6 Android screenshots at 1080 × 1920
 - `exports/google-play/feature-graphic/`: Google Play feature graphic at 1024 × 500
 
@@ -26,7 +27,7 @@ The visual direction uses the supplied premium store-listing reference: oversize
 
 ## Generator
 
-The editable Next.js generator is in `generator/`.
+The editable Next.js generator lives in `generator/` and is not tracked in git — it is a local authoring tool, not a release artifact.
 
 ```sh
 cd generator
@@ -39,7 +40,7 @@ Open `http://localhost:3000`, select a platform, preview the complete set, and u
 ## Release scope
 
 - Language: English
-- Platforms: iPhone and Android phone
+- Platforms: iPhone, iPad, and Android phone
 - Theme: dark premium technology
 - Source imagery: production Ruflet Explorer builds
-- Tablet and iPad artwork: not included
+- Android tablet artwork: not included
