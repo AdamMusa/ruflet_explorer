@@ -4,9 +4,7 @@
 
 # Ruflet Explorer
 
-### Your Ruby app, running everywhere, in seconds.
-
-**Edit `main.rb` → `ruflet run` → it's live — on your phone, your desktop, or a browser.**
+### The app preview for Ruflet — built entirely in Ruflet, 100% Ruby.
 
 Install Explorer once and every Ruby app you write opens on any of six platforms
 immediately — nothing to compile, nothing to sign, nothing to install again. Scan
