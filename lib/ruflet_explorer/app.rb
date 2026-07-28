@@ -108,13 +108,11 @@ module RufletExplorer
           horizontal_alignment: "stretch",
           children: [
             icon("hub", size: 54, color: BRAND),
-            text(
-              value: "Connect to Ruflet",
+            text("Connect to Ruflet",
               text_align: "center",
               style: { size: 26, weight: "w700" }
             ),
-            text(
-              value: "Enter the server address or scan the QR code shown by `ruflet run`.",
+            text("Enter the server address or scan the QR code shown by `ruflet run`.",
               text_align: "center",
               style: { size: 15 }
             ),
