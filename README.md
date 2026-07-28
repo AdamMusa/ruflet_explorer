@@ -40,21 +40,21 @@ is that loop, for Ruby.
 
 ## ✨ What it does
 
-Ruflet Explorer is written **entirely in Ruby** — every screen, every control, every
-route. There is no hand-written Dart, Kotlin, or Swift in this project. It is Ruflet
-dogfooding itself: the app that runs your Ruflet apps is a Ruflet app.
+Every screen you see here — the launcher, the scanner, the gallery — is Ruby. Not a
+line of Dart, Kotlin, or Swift was written for this app. The client that runs your
+Ruflet apps is itself a Ruflet app, which makes it the framework's toughest test.
 
-| | |
-|---|---|
-| 🔗 **Connect by URL** | Type `http://192.168.1.20:8550` — scheme, port, and localhost rewriting are handled for you |
-| 📷 **Scan to connect** | Camera scanner with torch and camera-switch, reading the QR printed by `ruflet run` |
-| 🧭 **Live rendering** | The remote app loads through Ruflet's `ruflet_app` control with auto-reconnect |
-| 🎨 **Studio on board** | A launcher FAB opens a bundled Ruflet Studio — 68 runnable example apps with source |
-| ♻️ **One VM** | Explorer and Studio share a single embedded Ruby VM; Studio's hub FAB returns home |
+**Two ways in.** Paste a server URL, or point the camera at the QR code `ruflet run`
+prints. Either way you land in your app a second later, and Explorer keeps the
+connection alive across reloads and reconnects.
 
-URL normalization is deliberately forgiving: it accepts bare hosts, upgrades `ws`/`wss`
-to `http`/`https`, picks `http` for IPs and localhost, and rewrites loopback addresses to
-`10.0.2.2` on Android emulators.
+**A whole gallery in your pocket.** Tap the launcher button and 68 runnable examples
+open up — buttons, charts, maps, sensors, games — each with its Ruby source right
+there to read. No server required, so it works on a plane.
+
+**Typing an address on a phone is miserable**, so Explorer meets you halfway. `192.168.1.20:8550`
+is enough: it fills in the scheme, converts `ws://` and `wss://` to HTTP, and quietly
+swaps `localhost` for `10.0.2.2` when you're on an Android emulator.
 
 ---
 
