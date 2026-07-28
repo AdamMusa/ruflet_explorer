@@ -1,4 +1,0 @@
-Vendored from /Users/macbookpro/Documents/Izeesoft/RailsApp/ruflet_studio.
-
-The lib/ and standalone_apps/ trees are copied without modification so Ruflet
-Explorer can bundle Studio in self-contained builds and run both in one Ruby VM.

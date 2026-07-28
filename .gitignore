@@ -22,6 +22,9 @@ key.properties
 # Release asset generator
 /release_assets/generator/
 
+# Local vendoring note (references a path outside this repo)
+/studio/UPSTREAM
+
 # Local tooling
 /.ruby-lsp/
 .DS_Store
