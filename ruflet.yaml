@@ -24,23 +24,20 @@ extensions:
 
 assets:
   dir: assets
-  splash_screen: assets/splash.png
-  icon_launcher: assets/icon.png
 
-build:
-  splash_color: "#FFFFFF"
-  splash_dark_color: "#0B0B0B"
-  icon_background: "#FFFFFF"
-  theme_color: "#6750A4"
-
-# Android draws its own splash from API 31 and its own adaptive icon from API 26,
-# so both need explicit configuration or the OS falls back to its defaults.
+# Each platform declares its own splash screen and launcher icon. Android draws
+# its own splash from API 31 and its own adaptive icon from API 26, so both need
+# explicit configuration or the OS falls back to its defaults.
 android:
+  splash_screen: assets/splash.png
   splash_color: "#FFFFFF"
   splash_dark_color: "#0B0B0B"
   splash_fullscreen: true
   splash_android_12_icon_background_color: "#FFFFFF"
   splash_android_12_icon_background_color_dark: "#0B0B0B"
+  icon_launcher: assets/icon.png
+  icon_background: "#FFFFFF"
+  theme_color: "#6750A4"
   adaptive_icon_background: "#FFFFFF"
   adaptive_icon_foreground: assets/icon.png
   min_sdk: 21
