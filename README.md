@@ -4,13 +4,13 @@
 
 # Ruflet Explorer
 
-### The app preview for Ruflet — built entirely in Ruflet, 100% Ruby.
+### The app preview for Ruflet — written entirely in Ruflet, 100% pure Ruby.
 
-Install Explorer once and every Ruby app you write opens on any of six platforms
-immediately — nothing to compile, nothing to sign, nothing to install again. Scan
-the QR code on mobile, or let `ruflet run` open the desktop or web client for you.
-If you've used Expo Go for React Native, this is that loop, for Ruby — everywhere
-Ruflet runs.
+Install it once and every Ruby app you write runs immediately on Android, iOS,
+macOS, Windows, Linux, and the web. Nothing to compile, nothing to sign, nothing
+to install again.
+
+If you've used Expo Go for React Native, this is that loop, for Ruby.
 
 [![Platform](https://img.shields.io/badge/platform-Android%20%7C%20iOS%20%7C%20macOS%20%7C%20Windows%20%7C%20Linux%20%7C%20Web-6750A4)](#-build)
 [![Pure Ruby](https://img.shields.io/badge/100%25-pure%20Ruby-CC342D)](#-project-layout)
