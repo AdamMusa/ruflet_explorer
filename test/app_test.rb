@@ -177,34 +177,6 @@ class RufletExplorerAppTest < Minitest::Test
     assert_equal true, patch["expand"]
   end
 
-  def web_page(route)
-    Ruflet::Page.new(
-      session_id: "explorer-web-test",
-      client_details: { "route" => route, "platform" => "macos", "width" => 1200, "height" => 800 },
-      sender: ->(action, payload) { @sent << [action, payload] }
-    )
-  end
-
-  def test_web_client_connects_using_the_url_query_parameter
-    page = web_page("/?url=http%3A%2F%2Flocalhost%3A8550")
-    app = RufletExplorer::App.new
-    app.view(page)
-
-    patch = page.controls.first.to_patch
-    assert_empty page.views
-    assert_equal "FletApp", patch["_c"]
-    assert_equal "http://localhost:8550", patch["url"]
-  end
-
-  def test_web_client_without_a_url_query_shows_the_launcher
-    page = web_page("/")
-    app = RufletExplorer::App.new
-    app.view(page)
-
-    assert_equal 1, page.views.size
-    assert_empty page.controls
-  end
-
   def test_empty_connect_keeps_launcher_visible_and_marks_url_required
     @app.view(@page)
     launcher = @page.views.first

@@ -20,26 +20,11 @@ module RufletExplorer
       @platform = page.platform.to_s
       configure_explorer_page
 
-      configured_url = initial_url
+      configured_url = ENV["RUFLET_URL"].to_s.strip
       configured_url.empty? ? show_launcher : connect_to(configured_url)
     end
 
     private
-
-    # `ruflet run --desktop` hands the server over in RUFLET_URL. On the web
-    # there is no process environment, so the client is opened at /?url=<server>
-    # and the target arrives in the page query instead.
-    def initial_url
-      from_env = ENV["RUFLET_URL"].to_s.strip
-      return from_env unless from_env.empty?
-
-      query = @page.respond_to?(:query) ? @page.query : nil
-      return "" unless query.is_a?(Hash)
-
-      value = query["url"] || query[:url]
-      value = value.first if value.is_a?(Array)
-      value.to_s.strip
-    end
 
     def configure_explorer_page
       @page.title = "Ruflet Explorer"
