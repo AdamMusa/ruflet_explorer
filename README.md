@@ -14,7 +14,7 @@ to sign, nothing to install again. If you've used Expo Go for React Native, this
 is that loop, for Ruby.
 
 [![Platform](https://img.shields.io/badge/platform-iOS%20%7C%20Android-6750A4)](#-build)
-[![Pure Ruby](https://img.shields.io/badge/100%25-pure%20Ruby-CC342D)](#-project-layout)
+[![Built with Ruflet](https://img.shields.io/badge/built%20with-Ruflet-CC342D)](#-project-layout)
 [![Version](https://img.shields.io/badge/version-1.0.1%2B6-6750A4)](services.yaml)
 [![Extensions](https://img.shields.io/badge/extensions-17-6750A4)](ruflet.yaml)
 [![Studio apps](https://img.shields.io/badge/studio%20apps-68-6750A4)](studio/)
@@ -40,9 +40,8 @@ is that loop, for Ruby.
 
 ## ✨ What it does
 
-Every screen you see here — the launcher, the scanner, the gallery — is Ruby. Not a
-line of Dart, Kotlin, or Swift was written for this app. The client that runs your
-Ruflet apps is itself a Ruflet app, which makes it the framework's toughest test.
+Explorer is itself a Ruflet app — the client that runs your Ruby apps is written with
+the same framework you're using, which makes it the toughest test Ruflet gets.
 
 **Two ways in.** Paste a server URL, or point the camera at the QR code `ruflet run`
 prints. Either way you land in your app a second later, and Explorer keeps the
