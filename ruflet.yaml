@@ -48,6 +48,7 @@ android:
   min_sdk: 21
 
 ios:
+  team_id: 7Z35W53SMQ
   splash_screen: assets/splash.png
   splash_color: "#FFFFFF"
   splash_dark_color: "#0B0B0B"
