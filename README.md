@@ -4,15 +4,17 @@
 
 # Ruflet Explorer
 
-### Your Ruby app, on a real device, in seconds.
+### Your Ruby app, running everywhere, in seconds.
 
-**Edit `main.rb` → `ruflet run` → scan → it's live in your hand.**
+**Edit `main.rb` → `ruflet run` → it's live — on your phone, your desktop, or a browser.**
 
-Install Explorer once and every Ruby app you write runs on the device immediately —
-nothing to compile, nothing to sign, nothing to install again. If you've used Expo Go
-for React Native, this is that loop, for Ruby.
+Install Explorer once and every Ruby app you write opens on any of six platforms
+immediately — nothing to compile, nothing to sign, nothing to install again. Scan
+the QR code on mobile, or let `ruflet run` open the desktop or web client for you.
+If you've used Expo Go for React Native, this is that loop, for Ruby — everywhere
+Ruflet runs.
 
-[![Platform](https://img.shields.io/badge/platform-iOS%20%7C%20Android-6750A4)](#-build)
+[![Platform](https://img.shields.io/badge/platform-Android%20%7C%20iOS%20%7C%20macOS%20%7C%20Windows%20%7C%20Linux%20%7C%20Web-6750A4)](#-build)
 [![Pure Ruby](https://img.shields.io/badge/100%25-pure%20Ruby-CC342D)](#-project-layout)
 [![Version](https://img.shields.io/badge/version-1.0.1%2B6-6750A4)](services.yaml)
 [![Extensions](https://img.shields.io/badge/extensions-17-6750A4)](ruflet.yaml)
@@ -24,13 +26,14 @@ for React Native, this is that loop, for Ruby.
 
 ## ✨ What it does
 
-**Two ways in.** Paste a server URL, or point the camera at the QR code `ruflet run`
-prints. Either way your app is on screen a second later, and Explorer holds the
-connection open across reloads and reconnects.
+**Two ways in.** On mobile, paste a server URL or point the camera at the QR code
+`ruflet run` prints. On desktop and web there is nothing to type — `ruflet run
+--desktop` and `--web` hand the client the address themselves. Either way your app
+is on screen a second later, and the connection survives reloads and reconnects.
 
-**A gallery in your pocket.** Tap the launcher button and 68 runnable examples open
-up — buttons, charts, maps, sensors, games — each with its Ruby source there to read.
-Nothing is fetched, so it all works offline.
+**A gallery in your pocket.** The mobile app carries 68 runnable examples — buttons,
+charts, maps, sensors, games — each with its Ruby source there to read. Nothing is
+fetched, so it all works offline.
 
 **Forgiving addresses.** Typing a URL on a phone is miserable, so `192.168.1.20:8550`
 is enough. Explorer fills in the scheme, converts `ws://` and `wss://` to HTTP, and
@@ -39,6 +42,10 @@ swaps `localhost` for `10.0.2.2` when you're on an Android emulator.
 **Built with Ruflet.** The launcher, the scanner, the embedded Studio — all Ruby.
 Explorer is a Ruflet app that runs Ruflet apps, which makes it the hardest test the
 framework gets.
+
+> On mobile Explorer ships self-contained, so its Ruby launcher, scanner and Studio
+> come with it. Desktop and web clients are server-driven and render whatever app
+> `ruflet run` points them at.
 
 ---
 
@@ -81,7 +88,8 @@ ruby test/standalone_apps_test.rb
 
 ## 📦 Build
 
-Always use **self-contained mode** so the Ruby launcher is embedded in the native app:
+On mobile, build **self-contained** so the Ruby launcher and scanner are embedded
+in the app:
 
 ```bash
 ruflet build apk --self
@@ -93,6 +101,25 @@ ruflet build aab --self
 
 ```bash
 ruflet build ios --self
+```
+
+Desktop and web are **server-driven**: those clients are told which server to open
+at launch, so nothing is baked in and one build works against any port.
+
+```bash
+ruflet build macos
+```
+
+```bash
+ruflet build windows
+```
+
+```bash
+ruflet build linux
+```
+
+```bash
+ruflet build web
 ```
 
 ---
