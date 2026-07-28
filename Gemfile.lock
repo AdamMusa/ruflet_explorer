@@ -1,18 +1,18 @@
 PATH
   remote: ../../FlutterApp/ruflet/packages/ruflet_core
   specs:
-    ruflet_core (0.0.19)
+    ruflet_core (0.0.20)
 
 PATH
   remote: ../../FlutterApp/ruflet/packages/ruflet_server
   specs:
-    ruflet_server (0.0.19)
-      ruflet_core (= 0.0.19)
+    ruflet_server (0.0.20)
+      ruflet_core (= 0.0.20)
 
 PATH
   remote: ../../FlutterApp/ruflet/packages/ruflet
   specs:
-    ruflet (0.0.19)
+    ruflet (0.0.20)
       rqrcode (~> 2.2)
 
 GEM
@@ -361,9 +361,9 @@ CHECKSUMS
   rqrcode_core (1.2.0) sha256=cf4989dc82d24e2877984738c4ee569308625fed2a810960f1b02d68d0308d1a
   ruby2_keywords (0.0.5) sha256=ffd13740c573b7301cf7a2e61fc857b2a8e3d3aff32545d6f8300d8bae10e3ef
   rubyzip (2.4.1) sha256=8577c88edc1fde8935eb91064c5cb1aef9ad5494b940cf19c775ee833e075615
-  ruflet (0.0.19)
-  ruflet_core (0.0.19)
-  ruflet_server (0.0.19)
+  ruflet (0.0.20)
+  ruflet_core (0.0.20)
+  ruflet_server (0.0.20)
   security (0.1.5) sha256=3a977a0eca7706e804c96db0dd9619e0a94969fe3aac9680fcfc2bf9b8a833b7
   signet (0.22.0) sha256=b76d495ccb07ad35dbc89f3e920665a9d8ed717141955034005d7843dcfe4780
   simctl (1.6.10) sha256=b99077f4d13ad81eace9f86bf5ba4df1b0b893a4d1b368bd3ed59b5b27f9236b

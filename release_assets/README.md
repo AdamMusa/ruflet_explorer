@@ -4,7 +4,8 @@ This folder contains the production App Store and Google Play marketing artwork 
 
 ## Final exports
 
-- `exports/apple/iphone-6.9/`: 6 iPhone screenshots at 1320 × 2868
+- `exports/apple/iphone-6.9/`: iPhone screenshots at 1320 × 2868 (6.9")
+- `exports/apple/iphone-6.5/`: iPhone screenshots at 1242 × 2688 (6.5")
 - `exports/google-play/phone/`: 6 Android screenshots at 1080 × 1920
 - `exports/google-play/feature-graphic/`: Google Play feature graphic at 1024 × 500
 
