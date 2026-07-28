@@ -48,3 +48,24 @@ ios:
   splash_dark_color: "#0B0B0B"
   icon_launcher: assets/icon.png
   remove_alpha: true
+
+web:
+  splash_screen: assets/splash.png
+  splash_color: "#FFFFFF"
+  splash_dark_color: "#0B0B0B"
+  image_mode: center
+  icon_launcher: assets/icon.png
+  icon_background: "#FFFFFF"
+  theme_color: "#6750A4"
+
+macos:
+  icon_launcher: assets/icon.png
+
+windows:
+  icon_launcher: assets/icon.png
+  icon_size: 256
+
+# Flutter's Linux runner has no icon or splash mechanism, so nothing is
+# generated from this section yet; the build reports it rather than ignoring it.
+linux:
+  icon_launcher: assets/icon.png
