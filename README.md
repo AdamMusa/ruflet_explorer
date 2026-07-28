@@ -23,21 +23,6 @@ is that loop, for Ruby.
 
 ---
 
-## 📱 See it
-
-<div align="center">
-
-<img src="release_assets/exports/apple/iphone-6.9/01-home-en-1320x2868.png" alt="Connect to Ruflet" width="24%" />
-<img src="release_assets/exports/apple/iphone-6.9/02-gallery-en-1320x2868.png" alt="Built-in gallery" width="24%" />
-<img src="release_assets/exports/apple/iphone-6.9/03-spinkit-en-1320x2868.png" alt="Live components" width="24%" />
-<img src="release_assets/exports/apple/iphone-6.9/04-charts-en-1320x2868.png" alt="Charts" width="24%" />
-
-<sub>Connect · Browse the gallery · Run live components · Render charts</sub>
-
-</div>
-
----
-
 ## ✨ What it does
 
 Every screen you see here — the launcher, the scanner, the gallery — is Ruby. Explorer
