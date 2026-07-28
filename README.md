@@ -8,10 +8,9 @@
 
 **Edit `main.rb` → `ruflet run` → scan → it's live in your hand.**
 
-Ruflet Explorer is the preview client for Ruflet apps. Install it once and every
-Ruby app you write runs on the device immediately — nothing to compile, nothing
-to sign, nothing to install again. If you've used Expo Go for React Native, this
-is that loop, for Ruby.
+Install Explorer once and every Ruby app you write runs on the device immediately —
+nothing to compile, nothing to sign, nothing to install again. If you've used Expo Go
+for React Native, this is that loop, for Ruby.
 
 [![Platform](https://img.shields.io/badge/platform-iOS%20%7C%20Android-6750A4)](#-build)
 [![Pure Ruby](https://img.shields.io/badge/100%25-pure%20Ruby-CC342D)](#-project-layout)
@@ -25,25 +24,28 @@ is that loop, for Ruby.
 
 ## ✨ What it does
 
-Every screen you see here — the launcher, the scanner, the gallery — is Ruby. Explorer
-is itself a Ruflet app, written with the same framework you're using, which makes it
-the toughest test Ruflet gets.
-
 **Two ways in.** Paste a server URL, or point the camera at the QR code `ruflet run`
-prints. Either way you land in your app a second later, and Explorer keeps the
-connection alive across reloads and reconnects.
+prints. Either way your app is on screen a second later, and Explorer holds the
+connection open across reloads and reconnects.
 
-**A whole gallery in your pocket.** Tap the launcher button and 68 runnable examples
-open up — buttons, charts, maps, sensors, games — each with its Ruby source right
-there to read. No server required, so it works on a plane.
+**A gallery in your pocket.** Tap the launcher button and 68 runnable examples open
+up — buttons, charts, maps, sensors, games — each with its Ruby source there to read.
+Nothing is fetched, so it all works offline.
 
-**Typing an address on a phone is miserable**, so Explorer meets you halfway. `192.168.1.20:8550`
-is enough: it fills in the scheme, converts `ws://` and `wss://` to HTTP, and quietly
+**Forgiving addresses.** Typing a URL on a phone is miserable, so `192.168.1.20:8550`
+is enough. Explorer fills in the scheme, converts `ws://` and `wss://` to HTTP, and
 swaps `localhost` for `10.0.2.2` when you're on an Android emulator.
+
+**Built with Ruflet.** The launcher, the scanner, the embedded Studio — all Ruby.
+Explorer is a Ruflet app that runs Ruflet apps, which makes it the hardest test the
+framework gets.
 
 ---
 
 ## 🚀 Run
+
+This repository is the Explorer client itself. To run it on a device or in a desktop
+preview:
 
 ```bash
 ruflet run main.rb
