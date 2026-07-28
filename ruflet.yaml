@@ -1,4 +1,9 @@
 app:
+  name: Ruflet Explorer
+  package_name: rufletexplorer
+  organization: com.izeesoft
+  version: 1.0.1+6
+  description: The app preview for Ruflet.
   backend_url: ""
 
 # Ruflet Explorer must be able to render every supported extension used by a
@@ -29,7 +34,7 @@ assets:
 # its own splash from API 31 and its own adaptive icon from API 26, so both need
 # explicit configuration or the OS falls back to its defaults.
 android:
-  splash_screen: assets/splash.png
+  splash_screen: assets/and_splash.png
   splash_color: "#FFFFFF"
   splash_dark_color: "#0B0B0B"
   splash_fullscreen: true

@@ -1,14 +1,10 @@
-# Keep this identity aligned with the existing Ruflet Explorer App Store and
-# Play Store listing. Changing the bundle identifier creates a different app.
+# The app identity lives in ruflet.yaml. Only the bundle identifiers stay here,
+# because they must keep matching the existing App Store and Play Store
+# listings — a different identifier is a different app.
 app:
-  app_name: Ruflet Explorer
-  package_name: rufletexplorer
-  organization: com.izeesoft
   bundle_identifier: com.izeesoft.rufletexplorer
   android_application_id: com.izeesoft.rufletexplorer
   ios_bundle_identifier: com.izeesoft.rufletexplorer
-  version: 1.0.1+6
-  description: Ruflet Explorer connection client.
 
 services:
   - camera:
