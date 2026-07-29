@@ -37,8 +37,7 @@ module RufletExplorer
     end
 
     def show_launcher(error: nil)
-      @scanner&.stop
-      @scanner = nil
+      stop_scanner!
       @scan_handled = false
       configure_explorer_page
       @page.on_route_change = lambda do |_event|
@@ -147,8 +146,7 @@ module RufletExplorer
     end
 
     def show_studio
-      @scanner&.stop
-      @scanner = nil
+      stop_scanner!
       @studio ||= Studio.new(@page, on_exit: -> { show_launcher })
       @studio.show
     end
@@ -230,8 +228,19 @@ module RufletExplorer
     end
 
     def leave_scanner
-      @scanner&.stop
+      stop_scanner!
       @page.go("/")
+    end
+
+    # Every path off the scanner used to stop it and then hand over to another
+    # path that stopped it again -- a scan ran handle_scan and then connect_to,
+    # Back ran leave_scanner and then show_launcher. The second stop reaches a
+    # controller that is already stopped, which the scanner plugin rejects.
+    # Clear the reference as part of stopping so the teardown runs once.
+    def stop_scanner!
+      scanner = @scanner
+      @scanner = nil
+      scanner&.stop
     end
 
     def handle_scan(payload)
@@ -250,7 +259,7 @@ module RufletExplorer
       end
 
       @scan_handled = true
-      @scanner&.stop
+      stop_scanner!
       connect_to(url)
     end
 
@@ -280,8 +289,7 @@ module RufletExplorer
       url = Url.normalize(payload, platform: @platform)
       return show_url_error("Enter a valid Ruflet server URL.") unless url
 
-      @scanner&.stop
-      @scanner = nil
+      stop_scanner!
       @page.views = []
       @page.appbar = nil
       @page.floating_action_button = nil

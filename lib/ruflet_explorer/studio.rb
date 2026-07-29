@@ -7,18 +7,18 @@ require "cgi"
 #
 # Load the same source tree as its standalone main.rb, but do not call
 # Ruflet.run. Explorer and Studio intentionally share one page and Ruby VM.
-require_relative "../../studio/lib/studio/config"
-require_relative "../../studio/lib/gallery"
-require_relative "../../studio/lib/studio/builtin_examples"
-require_relative "../../studio/lib/studio/gallery_catalog"
-require_relative "../../studio/lib/studio/preview_runtime"
-require_relative "../../studio/lib/studio/routing"
-require_relative "../../studio/lib/studio/shell"
-require_relative "../../studio/lib/studio/gallery_views"
-require_relative "../../studio/lib/studio/editor_views"
-require_relative "../../studio/lib/studio/thumbnails"
-require_relative "../../studio/lib/studio/preview_builders"
-require_relative "../../studio/lib/studio/settings"
+require_relative "../studio/lib/studio/config"
+require_relative "../studio/lib/gallery"
+require_relative "../studio/lib/studio/builtin_examples"
+require_relative "../studio/lib/studio/gallery_catalog"
+require_relative "../studio/lib/studio/preview_runtime"
+require_relative "../studio/lib/studio/routing"
+require_relative "../studio/lib/studio/shell"
+require_relative "../studio/lib/studio/gallery_views"
+require_relative "../studio/lib/studio/editor_views"
+require_relative "../studio/lib/studio/thumbnails"
+require_relative "../studio/lib/studio/preview_builders"
+require_relative "../studio/lib/studio/settings"
 
 module RufletExplorer
   class Studio
