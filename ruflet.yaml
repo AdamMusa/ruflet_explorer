@@ -49,6 +49,9 @@ android:
   min_sdk: 21
 
 ios:
+  # Explorer hosts remote RufletApp sessions even though its own Ruby is in-process.
+  local_network: true
+  local_network_usage_description: Connect to the Ruflet server selected by address or QR code.
   team_id: 7Z35W53SMQ
   splash_screen: assets/splash.png
   splash_color: "#FFFFFF"
@@ -66,6 +69,8 @@ web:
   theme_color: "#6750A4"
 
 macos:
+  local_network: true
+  local_network_usage_description: Connect to the Ruflet server selected by address or QR code.
   icon_launcher: assets/icon.png
 
 windows:
