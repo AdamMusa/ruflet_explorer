@@ -143,6 +143,28 @@ class RufletExplorerAppTest < Minitest::Test
     assert_equal 1, @sent.count { |action, _payload| action == Ruflet::Protocol::ACTIONS[:patch_control] }
   end
 
+  def test_concurrent_clients_keep_independent_studio_pages
+    second_page = Ruflet::Page.new(
+      session_id: "explorer-test-2",
+      client_details: {
+        "route" => "/",
+        "platform" => "macos",
+        "width" => 900,
+        "height" => 700
+      },
+      sender: ->(_action, _payload) {}
+    )
+
+    @app.view(@page)
+    @app.view(second_page)
+    @page.go("/studio")
+    second_page.go("/studio")
+
+    assert_equal ["/", "/studio"], @page.views.map { |view| view.props["route"] }
+    assert_equal ["/", "/studio"], second_page.views.map { |view| view.props["route"] }
+    refute_same @page.views.last, second_page.views.last
+  end
+
   def test_gallery_catalog_loads_example_sources_only_when_opened
     material = gallery_examples.find { |item| item[:slug] == "material" }
 
@@ -171,10 +193,12 @@ class RufletExplorerAppTest < Minitest::Test
     patch = @page.controls.first.to_patch
     assert_nil @page.appbar
     assert_equal "ruflet_app", @page.controls.first.type
-    # The client widget is still registered upstream as FletApp.
-    assert_equal "FletApp", patch["_c"]
+    assert_equal "RufletApp", patch["_c"]
     assert_equal "http://10.0.2.2:8550", patch["url"]
     assert_equal true, patch["expand"]
+    %w[theme dark_theme theme_mode bgcolor].each do |property|
+      refute patch.key?(property), "Explorer must not force child app #{property}"
+    end
   end
 
   def test_empty_connect_keeps_launcher_visible_and_marks_url_required
@@ -243,7 +267,7 @@ class RufletExplorerAppTest < Minitest::Test
 
     assert_equal true, @app.instance_variable_get(:@scan_handled)
     assert_equal 1, @page.controls.size
-    assert_equal "FletApp", @page.controls.first.to_patch["_c"]
+    assert_equal "RufletApp", @page.controls.first.to_patch["_c"]
     assert_equal "http://192.168.1.20:8550", @page.controls.first.props["url"]
   end
 

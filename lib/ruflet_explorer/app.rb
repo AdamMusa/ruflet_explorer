@@ -16,6 +16,15 @@ module RufletExplorer
     end
 
     def view(page)
+      # `Ruflet::App` keeps one application object while the server may mount
+      # multiple client sessions. Explorer stores control references and its
+      # Studio router in instance variables, so reusing this object would bind
+      # the second client's callbacks to the first client's Page. Keep one App
+      # instance alive per Page through the event-handler closures it installs.
+      if @page && !@page.equal?(page)
+        return self.class.new.view(page)
+      end
+
       @page = page
       @platform = page.platform.to_s
       configure_explorer_page
