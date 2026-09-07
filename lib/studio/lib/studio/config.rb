@@ -89,7 +89,7 @@ def set_studio_theme(page, mode)
   return unless STUDIO_THEME_PALETTES.key?(normalized) || normalized == "system"
 
   @studio_theme_mode = normalized
-  GALLERY_PREVIEW.instance_variable_set(:@theme_mode, normalized) if defined?(GALLERY_PREVIEW)
+  GALLERY_PREVIEW.instance_variable_set(:@theme_mode, normalized) if Object.const_defined?(:GALLERY_PREVIEW)
   apply_studio_theme(page)
   render(page, flush: true)
 end
