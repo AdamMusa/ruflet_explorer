@@ -2,7 +2,7 @@ app:
   name: Ruflet Explorer
   package_name: rufletexplorer
   organization: com.izeesoft
-  version: 1.0.1+10
+  version: 1.0.1+11
   description: The app preview for Ruflet.
   backend_url: ""
 

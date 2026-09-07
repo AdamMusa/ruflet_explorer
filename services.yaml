@@ -15,3 +15,5 @@ services:
       description: Location access may be requested by connected experiences that use location-aware components.
   - motion:
       description: Motion access is required for barometer readings.
+  - photo_library:
+      description: Photo library access lets you choose media while testing Ruflet file and media controls.
