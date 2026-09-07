@@ -24,6 +24,7 @@ extensions:
   - qrcode_scanner
   - rive
   - secure_storage
+  - spinkit
   - video
   - webview
 
