@@ -37,7 +37,7 @@ class StandaloneAppsTest < Minitest::Test
     sources.each do |path|
       source = File.read(path)
       video_position = source.index(/container\(alignment: "center", content: video\)/)
-      controls_position = source.index(/container\(expand: true, content: column\(\s*\n\s*expand: true,\s*\n\s*scroll: "auto",/)
+      controls_position = source.index(/list_view\(\s*\n\s*expand: true,\s*\n\s*scroll: "auto",/)
 
       refute_nil video_position, path
       refute_nil controls_position, path

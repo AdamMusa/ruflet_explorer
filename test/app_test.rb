@@ -143,6 +143,37 @@ class RufletExplorerAppTest < Minitest::Test
     assert_equal 1, @sent.count { |action, _payload| action == Ruflet::Protocol::ACTIONS[:patch_control] }
   end
 
+  def test_video_preview_keeps_the_player_fixed_and_scrolls_its_controls
+    @app.view(@page)
+    @page.go("/studio")
+    @page.go("/gallery/services/example/video")
+
+    controls = []
+    visit = lambda do |value|
+      case value
+      when Ruflet::Control
+        controls << value
+        value.children.each { |child| visit.call(child) }
+        value.props.each_value { |property| visit.call(property) }
+      when Array
+        value.each { |entry| visit.call(entry) }
+      when Hash
+        value.each_value { |entry| visit.call(entry) }
+      end
+    end
+    visit.call(@page.views.last)
+
+    player = controls.find { |control| control.type == "video" }
+    control_list = controls.find do |control|
+      control.type == "listview" && control.props["scroll"] == "auto"
+    end
+
+    refute_nil player
+    refute_nil control_list
+    assert_equal true, control_list.props["expand"]
+    refute_includes control_list.children, player
+  end
+
   def test_concurrent_clients_keep_independent_studio_pages
     second_page = Ruflet::Page.new(
       session_id: "explorer-test-2",

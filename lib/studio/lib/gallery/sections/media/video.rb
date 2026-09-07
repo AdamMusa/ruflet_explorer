@@ -50,11 +50,10 @@ module Gallery
         children: [
           status,
           container(alignment: "center", content: video),
-          container(expand: true, content: column(
+          list_view(
             expand: true,
             scroll: "auto",
             spacing: 12,
-            horizontal_alignment: "stretch",
             children: [
               column(
                 spacing: 8,
@@ -97,7 +96,7 @@ module Gallery
                 }
               )
             ]
-          ))
+          )
         ]
       ))
     end
