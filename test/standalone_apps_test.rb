@@ -28,6 +28,28 @@ class StandaloneAppsTest < Minitest::Test
     end
   end
 
+  def test_video_player_stays_bounded_while_its_controls_scroll
+    sources = [
+      File.expand_path("../lib/studio/standalone_apps/video/main.rb", __dir__),
+      File.expand_path("../lib/studio/lib/gallery/sections/media/video.rb", __dir__)
+    ]
+
+    sources.each do |path|
+      source = File.read(path)
+      video_position = source.index(/container\(alignment: "center", content: video\)/)
+      controls_position = source.index(/container\(expand: true, content: column\(\s*\n\s*expand: true,\s*\n\s*scroll: "auto",/)
+
+      refute_nil video_position, path
+      refute_nil controls_position, path
+      assert_operator video_position, :<, controls_position, path
+    end
+
+    editor_source = File.read(
+      File.expand_path("../lib/studio/lib/studio/editor_views.rb", __dir__)
+    )
+    assert_match(/FILL_PREVIEW_SLUGS = %w\[[^\]]*\bvideo\b[^\]]*\]/, editor_source)
+  end
+
   def test_cupertino_controls_are_interactive_in_standalone_and_gallery
     paths = [
       File.expand_path("../lib/studio/standalone_apps/cupertino/main.rb", __dir__),

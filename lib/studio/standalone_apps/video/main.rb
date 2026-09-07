@@ -48,16 +48,20 @@ Ruflet.run do |page|
   page.add(
     container(
       expand: true,
-      alignment: "center",
       padding: 24,
-      content: column(
+      content: safe_area(expand: true, content: column(
+        expand: true,
         spacing: 8,
+        horizontal_alignment: "stretch",
         children: [
           status,
-          safe_area(content: column(
+          container(alignment: "center", content: video),
+          container(expand: true, content: column(
+            expand: true,
+            scroll: "auto",
             spacing: 12,
+            horizontal_alignment: "stretch",
             children: [
-              video,
               column(
                 spacing: 8,
                 children: [
@@ -99,7 +103,7 @@ Ruflet.run do |page|
             ]
           ))
         ]
-      )
+      ))
     )
   )
 end
