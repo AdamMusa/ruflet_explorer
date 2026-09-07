@@ -14,7 +14,7 @@ If you've used Expo Go for React Native, this is that loop, for Ruby.
 
 [![Platform](https://img.shields.io/badge/platform-Android%20%7C%20iOS%20%7C%20macOS%20%7C%20Windows%20%7C%20Linux%20%7C%20Web-6750A4)](#-build)
 [![Pure Ruby](https://img.shields.io/badge/100%25-pure%20Ruby-CC342D)](#-project-layout)
-[![Version](https://img.shields.io/badge/version-1.0.1%2B6-6750A4)](services.yaml)
+[![Version](https://img.shields.io/badge/version-1.0.1%2B10-6750A4)](services.yaml)
 [![Extensions](https://img.shields.io/badge/extensions-17-6750A4)](ruflet.yaml)
 [![Studio apps](https://img.shields.io/badge/studio%20apps-68-6750A4)](studio/)
 
